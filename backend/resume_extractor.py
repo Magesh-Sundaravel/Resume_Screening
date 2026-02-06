@@ -24,7 +24,7 @@ def extract_resume_details(resume_text: str) -> dict:
                     "content": f"Extract information from this resume:\n\n{resume_text}"
                 }
             ],
-            model="llama-3.3-70b-versatile",
+            model="llama-3.1-8b-instant",
             temperature=0.1,
         )
         
