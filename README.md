@@ -1,4 +1,4 @@
-# AI Resume Matcher
+# AI Resume Screening
 
 AI-powered resume matching system with FastAPI backend and Streamlit frontend.
 
