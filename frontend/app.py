@@ -5,7 +5,7 @@ from frontend.utils import upload_and_extract_resume, match_with_job, complete_a
 import os
 
 # Check backend connection
-BACKEND_URL = os.getenv("BACKEND_URL", "http://localhost:8000")
+BACKEND_URL = "https://resume-matcher-api-mail.onrender.com"
 
 def check_backend_health():
     """Check if backend is reachable"""
