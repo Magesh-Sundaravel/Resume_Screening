@@ -1,7 +1,7 @@
 import streamlit as st
 import json
 import requests
-from .utils import upload_and_extract_resume, match_with_job, complete_analysis
+from utils import upload_and_extract_resume, match_with_job, complete_analysis
 import os
 
 # Check backend connection
