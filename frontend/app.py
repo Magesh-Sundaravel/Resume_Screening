@@ -104,15 +104,20 @@ with tab1:
         col1, col2, col3 = st.columns([1, 1, 1])
         
         with col2:
+            # In the upload tab, when extracting:
             if st.button("🔍 Extract Resume Details", type="primary", use_container_width=True):
-                with st.spinner("Analyzing your resume..."):
+                with st.spinner("🔄 Analyzing your resume... This may take 30-60 seconds..."):
+                    import time
+                    start_time = time.time()
                     result = upload_and_extract_resume(uploaded_file)
+                    elapsed = time.time() - start_time
                     
                     if "error" in result:
                         st.error(f"Error: {result['error']}")
+                        st.info(f"Processing took {elapsed:.1f} seconds")
                     else:
                         st.session_state.resume_details = result.get('resume_details')
-                        st.success("✅ Resume extracted successfully!")
+                        st.success(f"✅ Resume extracted successfully in {elapsed:.1f} seconds!")
                         st.balloons()
         
         # Display extracted details

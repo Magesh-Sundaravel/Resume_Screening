@@ -63,7 +63,7 @@ def complete_analysis(file, job_description):
             f"{BACKEND_URL}/analyze", 
             files=files, 
             data=data,
-            timeout=180  # 3 minutes for complete analysis
+            timeout=240  # 4 minutes for complete analysis
         )
         response.raise_for_status()
         return response.json()

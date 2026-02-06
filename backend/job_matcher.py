@@ -8,6 +8,7 @@ load_dotenv()
 client = OpenAI(
     api_key=os.getenv("GROQ_API_KEY"),
     base_url="https://api.groq.com/openai/v1",
+    timeout=60.0, 
 )
 
 def match_resume_to_job(resume_details: dict, job_description: str) -> dict:
