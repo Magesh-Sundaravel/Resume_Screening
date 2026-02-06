@@ -4,12 +4,12 @@ services:
     name: resume-matcher-api
     runtime: python
     plan: free
-    region: oregon  # Choose: oregon, frankfurt, singapore
-    buildCommand: "pip install --upgrade pip && pip install -e ."
+    region: oregon
+    buildCommand: "pip install --upgrade pip && pip install fastapi[standard] openai pypdf2 python-docx python-dotenv uvicorn"
     startCommand: "uvicorn backend.main:app --host 0.0.0.0 --port $PORT"
     envVars:
       - key: GROQ_API_KEY
-        sync: false  # Will be set manually in Render dashboard
+        sync: false
       - key: PYTHON_VERSION
         value: "3.12.0"
     healthCheckPath: /health
@@ -20,12 +20,12 @@ services:
     name: resume-matcher-frontend
     runtime: python
     plan: free
-    region: oregon  # Same region as backend for better performance
-    buildCommand: "pip install --upgrade pip && pip install -e ."
+    region: oregon
+    buildCommand: "pip install --upgrade pip && pip install fastapi[standard] openai pypdf2 python-docx python-dotenv streamlit requests"
     startCommand: "streamlit run frontend/app.py --server.port $PORT --server.address 0.0.0.0 --server.enableCORS false --server.enableXsrfProtection false"
     envVars:
       - key: BACKEND_URL
-        value: https://resume-matcher-api.onrender.com  # Update after backend is deployed
+        value: https://resume-matcher-api.onrender.com
       - key: PYTHON_VERSION
         value: "3.12.0"
     autoDeploy: true
