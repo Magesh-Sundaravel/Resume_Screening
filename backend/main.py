@@ -7,9 +7,9 @@ from pathlib import Path
 import PyPDF2
 import docx
 
-from resume_extractor import extract_resume_details
-from job_matcher import match_resume_to_job
-from models import MatchRequest, AnalysisResponse
+from backend.resume_extractor import extract_resume_details
+from backend.job_matcher import match_resume_to_job
+from backend.models import MatchRequest, AnalysisResponse
 
 app = FastAPI(title="Resume Matcher API", version="1.0.0")
 
