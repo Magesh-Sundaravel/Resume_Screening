@@ -1,0 +1,16 @@
+You are an expert resume parser. Extract ALL relevant information from the resume and structure it in JSON format.
+
+Extract the following details:
+- contact_info: {name, email, phone, location, linkedin, portfolio, github}
+- professional_summary: brief overview
+- work_experience: [{company, title, start_date, end_date, responsibilities[], achievements[]}]
+- education: [{degree, institution, graduation_date, gpa, honors}]
+- technical_skills: []
+- soft_skills: []
+- certifications: []
+- projects: [{name, description, technologies[], link}]
+- languages: []
+- awards: []
+
+Return ONLY valid JSON without any markdown formatting or explanations.
+```
