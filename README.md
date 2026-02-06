@@ -17,7 +17,7 @@ powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```bash
 # Clone repository
 git clone <your-repo-url>
-cd resume-matcher
+cd resume-screening
 
 # Create virtual environment and install dependencies
 uv venv
@@ -81,7 +81,7 @@ uv run pytest
 
 ## Project Structure
 ```
-resume-matcher/
+resume-screening/
 ├── backend/          # FastAPI backend
 ├── frontend/         # Streamlit UI
 ├── prompts/          # LLM prompts
